@@ -1,0 +1,151 @@
+\documentclass[10pt,a4paper]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{tabularx} % Fondamentale per tabelle a larghezza fissa (adattabili)
+\usepackage{booktabs} % Per linee delle tabelle più pulite ed eleganti
+\usepackage{array}    % Permette configurazioni avanzate delle colonne
+
+\usepackage[table]{xcolor} % Permette di usare i colori nelle tabelle
+
+% Definiamo un colore grigio chiaro personalizzato
+\definecolor{lightgray}{gray}{0.85}
+
+% Trucco per booktabs: dice a \midrule di usare il grigio chiaro
+% solo quando decidiamo noi. Altrimenti usiamo un comando personalizzato:
+\newcommand{\grigioriga}{\arrayrulecolor{lightgray}\midrule\arrayrulecolor{black}}
+
+% --- Configurazione Margini ---
+\geometry{
+    a4paper,
+    left=15mm,
+    right=15mm,
+    top=20mm,
+    bottom=20mm
+}
+
+% --- Configurazione Colonne Personalizzate ---
+% Definiamo un tipo di colonna 'M' che forza la modalità matematica (\displaystyle)
+% e allinea il testo verticalmente al centro.
+\newcolumntype{M}{>{\centering\arraybackslash$\displaystyle}X<{$}}
+\newcolumntype{L}{>{\raggedright\arraybackslash\bfseries}p{5cm}}
+
+% --- Info Documento ---
+\title{\Huge\textbf{Formulario Fisica}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Cinematica}
+
+\subsection{Leggi orarie}
+
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Descrizione & \multicolumn{1}{c}{\large Formula} \\ 
+    
+    \midrule
+    Spostamento & x(t) = x_0 + v_0 t + \frac{1}{2} a t^2 \\[1.5ex]
+    \grigioriga
+    Velocità & v(t) = v_0 + a(t - t_0) \\[1.5ex]
+    \grigioriga
+    Velocità in Posizione & v^2(x) = v_0^2 + 2a(x - x_1) \\
+    \grigioriga
+    Media & v = \frac{v_1 - v_0}{v_1 - t_0} \ \text{(analogo per accelerazione)}\\[1.5ex]
+    \grigioriga
+    Velocità con accelerazione & v(t) = v_0 + \int_{t_0}^{t_1} a(t) \ dt \\[1.5ex]
+    
+    \bottomrule
+\end{tabularx}
+
+\subsection{Moto del proiettile}
+
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ 
+    
+    \midrule
+    Posizione x & x(t) = x_0 + (v_0 \cos\phi_0)t \\[1.5ex]
+    \grigioriga
+    Posizione y & y(t) = y_0 + (v_0 \sin\phi_0)t - \frac{1}{2}gt^2 \\[1.5ex]
+    \grigioriga
+    Modulo velocità & |\vec{v}| = \sqrt{v_x^2 + v_y^2} \\[1.5ex]
+    \grigioriga
+    Angolo iniziale & tan\phi_0 = \frac{v_y}{v_x} \\[1.5ex]
+    \grigioriga
+    Gittata & R = \frac{v_0^2}{g} \sin 2\phi_0 \\[1.5ex] 
+
+    \bottomrule
+\end{tabularx}
+
+\subsection{Moto circolare}
+
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ % <- Sistemato qui!
+    
+    \midrule
+    Posizione x & x = R \cos \theta \\[1.5ex]
+    \grigioriga
+    Posizione y & y = R \sin \theta \\[1.5ex]
+    \grigioriga
+    Vettore posizione & \vec{r} = R \cos\theta \hat{i} + R \sin\theta \hat{j} \\[1.5ex]
+    \grigioriga
+    Velocità angolare & \omega = \frac{v_s}{R} \\[1.5ex]
+    \grigioriga
+    Angolo orario & \theta(t) = \theta_0 + \omega(t - t_0) \\[1.5ex]
+    \grigioriga
+    Accelerazione centripeta & a_c = \omega^2 R = \frac{v_s^2}{R} = v_s \omega \\[1.5ex]
+    \grigioriga
+    Accelerazione angolare & \alpha = \frac{d\omega}{dt} \\[1.5ex]
+    \grigioriga
+    Accelerazione tangenziale & a_t = \alpha R\\[1.5ex]
+    \grigioriga
+    Accelerazione totale & a = \sqrt{a_c^2 + a_t^2} = R\sqrt{\omega^4 + \alpha^2} \\[1.5ex]
+    
+    \bottomrule
+\end{tabularx}
+
+\section{Forze}
+
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ % <- Sistemato qui!
+    
+    \midrule
+    2° Legge di Newton & \vec{F} = m\vec{a} \\[1.5ex]
+    \grigioriga
+    Forza peso & \vec{P} = m\vec{g} \\[1.5ex]
+    \grigioriga
+    Forza vettoriale & \vec{F} = F\cos\theta + F\sin\theta \\[1.5ex]
+    \grigioriga
+    Forza di attrito statica & F_s \le \mu_s N \\[1.5ex]
+    \grigioriga
+    Forza di attrito dinamica & F_k = \mu_k N  \\[1.5ex]
+    \grigioriga
+    Forza elastica & F = -k (l - l_0) \ \text{con $k$ costante elastica} \\[1.5ex]
+    \grigioriga
+    Oscillatore armonico & x(t) = A \cos(\omega t + \phi) \ \text{con $\omega = \sqrt{\frac{k}{m}}$, $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase} \\[1.5ex] 
+    \grigioriga
+    Periodo oscillatore armonico & T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{m}{k}} \\[1.5ex]
+    \grigioriga
+    Frequenza oscillatore armonico & \nu = \frac{1}{T} = \frac{\omega}{2\pi} = \frac{1}{2\pi} \sqrt{\frac{k}{m}} \\[1.5ex]
+    \grigioriga
+    Velocità max moto armonico & v_{\text{max}} = \omega A \\[1.5ex]
+    \grigioriga
+    Accelerazione max moto armonico & a_\text{max} = \omega^2 A\\[1.5ex]
+    \grigioriga
+    Pendolo semplice & \sum F_x = -m g \sin \theta = m a \implies a = -g \sin \theta \\[1.5ex]
+    \grigioriga
+    Piccole oscillazioni pendolo & 2 \pi \sqrt{\frac{l}{g}}\\[1.5ex]
+    
+    \bottomrule
+\end{tabularx}
+
+\end{document}
