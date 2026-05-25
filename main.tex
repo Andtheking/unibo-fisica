@@ -1,24 +1,18 @@
 \documentclass[10pt,a4paper]{article}
 
-% --- Pacchetti Fondamentali ---
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{geometry}
-\usepackage{tabularx} % Fondamentale per tabelle a larghezza fissa (adattabili)
-\usepackage{booktabs} % Per linee delle tabelle più pulite ed eleganti
-\usepackage{array}    % Permette configurazioni avanzate delle colonne
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[table]{xcolor}
 
-\usepackage[table]{xcolor} % Permette di usare i colori nelle tabelle
-
-% Definiamo un colore grigio chiaro personalizzato
 \definecolor{lightgray}{gray}{0.85}
 
-% Trucco per booktabs: dice a \midrule di usare il grigio chiaro
-% solo quando decidiamo noi. Altrimenti usiamo un comando personalizzato:
 \newcommand{\grigioriga}{\arrayrulecolor{lightgray}\midrule\arrayrulecolor{black}}
 
-% --- Configurazione Margini ---
 \geometry{
     a4paper,
     left=15mm,
@@ -27,13 +21,9 @@
     bottom=20mm
 }
 
-% --- Configurazione Colonne Personalizzate ---
-% Definiamo un tipo di colonna 'M' che forza la modalità matematica (\displaystyle)
-% e allinea il testo verticalmente al centro.
 \newcolumntype{M}{>{\centering\arraybackslash$\displaystyle}X<{$}}
 \newcolumntype{L}{>{\raggedright\arraybackslash\bfseries}p{5cm}}
 
-% --- Info Documento ---
 \title{\Huge\textbf{Formulario Fisica}}
 \author{}
 \date{}
@@ -88,7 +78,7 @@
 
 \begin{tabularx}{\textwidth}{L M}
     \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ % <- Sistemato qui!
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
     
     \midrule
     Posizione x & x = R \cos \theta \\[1.5ex]
@@ -116,7 +106,7 @@
 
 \begin{tabularx}{\textwidth}{L M}
     \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ % <- Sistemato qui!
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
     
     \midrule
     2° Legge di Newton & \vec{F} = m\vec{a} \\[1.5ex]
@@ -152,11 +142,31 @@
 
 \begin{tabularx}{\textwidth}{L M}
     \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ % <- Sistemato qui!
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
     
     \midrule
-    Lavoro & L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = \Delta K = F \frac{\Delta x}{\sin(\Theta)} \cos(\frac{\pi}{2} - \Theta) \\[1.5ex]
+    Lavoro & L = 
+        \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = 
+        \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = 
+        F \frac{\Delta x}{\sin(\Theta)} \cos(\frac{\pi}{2} - \Theta) \\[1.5ex]
+    \grigioriga
     Energia cinetica & K = \frac{1}{2} m v^2 \\[1.5ex]
+    \grigioriga
+    Energia potenziale & \text{d}U = -F \text{d}x\\[1.5ex]
+    \grigioriga
+    Energia meccanica & E = U + K \\[1.5ex]
+    \grigioriga
+    Energia potenziale peso & U(y) = mgy \\[1.5ex]
+    \grigioriga
+    Energia potenziale elastica & U(x) = \frac{1}{2} k x^2 \\[1.5ex]
+    \grigioriga
+    Energia meccanica oscillatore armonico & E = k + U = \frac{1}{2} m v^2 + \frac{1}{2} k x^2 \\[3.5ex]
+    (in equilibrio) & U(0) = 0 \text{, } K = E\\[1.5ex]
+    (al massimo) & U(A) = E \text{, } K = 0 \text{, con A ampiezza}\\[1.5ex]
+    \grigioriga
+    Potenza & P = \frac{dL}{dt} \\[1.5ex]
+    Potenza su punto materiale & P = \vec{F} \dot \vec{v} \\[1.5ex]
+
     \bottomrule
 \end{tabularx}
 
