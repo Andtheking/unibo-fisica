@@ -132,8 +132,8 @@
     Accelerazione max moto armonico & a_\text{max} = \omega^2 A\\[1.5ex]
     \grigioriga
     Pendolo semplice & \sum F_x = -m g \sin \theta = m a \implies a = -g \sin \theta \\[1.5ex]
-    \grigioriga
     Piccole oscillazioni pendolo & 2 \pi \sqrt{\frac{l}{g}}\\[1.5ex]
+    Trazione & T = -\vec{P} + \vec{F}_\text{risalita} = mg + m \frac{v^2}{l} \\[1.5ex]
     
     \bottomrule
 \end{tabularx}
@@ -168,6 +168,112 @@
     Potenza su punto materiale & P = \vec{F} \dot \vec{v} \\[1.5ex]
 
     \bottomrule
+\end{tabularx}
+
+\section{Elettrostatica}
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
+    
+    \midrule
+    Carica oggetto & q = (N_p - N_e)e \\[1.5ex]
+    Costante di proporzionalità & K = \frac{1}{4 \pi \epsilon_0 [\epsilon_r]} \text{ con $\epsilon_r$ solo non nel vuoto} \\[1.5ex]
+    Coulomb, cariche puntiformi & \vec{F_{ab}} = \frac{1}{4 \pi \epsilon_0} \frac{q_a q_b}{r^2} \hat{r}_{ab} \text{ , } \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r} \\[1.5ex]
+    Accelerazione da campo & a = \frac{q\vec{E}}{m} \\[1.5ex]
+    Gauss & \Phi(\vec{E}) = \frac{Q}{\epsilon_0} \\[1.5ex]
+    Potenziale per carica & V = \frac{1}{4 \pi \epsilon_0} \frac{q}{r} \\[1.5ex]
+    Energia potenziale elettrica & U = V q \\[1.5ex]
+    Capacità & C = \frac{Q}{V} \\[1.5ex]
+    Condensatore piano & C = \frac{[\epsilon_r] \epsilon_0 A}{d} \\[1.5ex]
+    Condensatori in serie & \frac{1}{C} = \sum_i \frac{1}{  C_i} \\[1.5ex]    
+    Condensatori in parallelo & C = \sum_i C_i \\[1.5ex]
+    Energia potenziale condensatore & U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2} \\[1.5ex]   
+    Densità di energia & u = \frac{U}{A d} = \frac{1}{2} \epsilon_0 E^2 \\[1.5ex]
+    Intensità di corrente & I = \frac{dQ}{dt} = n S v_d |q| \text{, con $n$ densità portatori, $S$ sezione filo, $v_d$ velocità deriva} \\[1.5ex]
+    Densità volumica & n = \frac{dN}{dV} \text{, con $N$ numero di particelle e $V$ volume} \\[1.5ex]
+    Densità corrente & J = \frac{I}{S} = n q v_d \\[1.5ex]
+    Legge di Ohm & V = R I \\[1.5ex]
+    Resistività materiale & R = \rho \frac{l}{S} \\[1.5ex]
+    Ohm con densità corrente & \vec{E} = \rho \vec{J} \\[1.5ex]
+    Drude accelerazione con campo & \vec{a} = - \frac{e \vec{E}}{m} = \frac{\vec{F}}{m} \\[1.5ex]
+    Drude velocità deriva & \vec{v_d} = -\frac{e E}{m} \tau \text{ con $\tau$ tempo medio tra urti} \\[1.5ex]
+    Drude resistività & \rho = \frac{m}{n e^2 \tau} \\[1.5ex]
+    Resistenze in serie & R_{tot} = R_1 + R_2 \\[1.5ex]
+    Resistenze in parallelo & \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} \\[1.5ex]
+    Legge di Joule & P = V I = R I^2 = \frac{V^2}{R} \\[1.5ex]
+    Energia dissipata in resistenza & \Delta U = -V \Delta Q \\[1.5ex]
+    1° Legge Kirchoff & I_{in_1} + I_{in_2} = I_{out_1} + I_{out_2} \\[1.5ex]
+    2° Legge Kirchoff & V - R_1 I - R_2 I - R_3 I = 0 \\[1.5ex]
+    Carica condensatore & q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}}) \\[1.5ex]
+    \bottomrule
+\end{tabularx}
+
+\section{Magnetismo}
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
+    
+    \midrule
+    Campo generato da un filo & B \propto \frac{i}{r} \text{, con $i$ corrente nel filo, $r$ distanza dal filo} \\[1.5ex]
+    Legge di Lorentz & \vec{F} = q \vec{V} \cdot \vec{B} \\[1.5ex]
+    Lorents con campo E & \vec{F} = q \vec{E} + q (\vec{v} \cdot \vec{B}) \\[1.5ex]
+    Modulo Lorenz & F = |q| v B \sin \theta \text{, con $\theta$ angolo tra velocità e campo} \\[1.5ex]
+    Moto campo magnetico uniforme & r = \frac{m v}{q B} \text{, } \omega_C = \frac{q B}{m} \text{ (detta frequenza di ciclotrone), } \nu = \frac{\omega_C}{2 \pi} \\[1.5ex]
+    Velocità in ciclotrone & v = \frac{E}{B} \\[1.5ex]
+    Thomson & \frac{e}{m} = \frac{y E}{B^2 (LD + \frac{L^2}{2})} \\[1.5ex]
+    Campo di Hall & E_H = \frac{J B}{n q} = v_d B\\[1.5ex]
+    Coefficiente di Hall & R_H = \frac{E_H}{JB} = \frac{1}{n q} \\[1.5ex]
+    Filo rettilineo & F = I l \times B\\[1.5ex]
+    Momento meccanico torcente & \tau = I S \times B \\[1.5ex]
+    Teorema di Ampére & \oint B \ dr = \mu_0 \sum I_{conc}  \\[1.5ex]
+    Filo dritto infinito & B = \frac{\mu_0 I}{2 \pi R} \\[1.5ex]
+    Interno del filo & B = \frac{\mu_0 I R}{2 \pi a^2} \\[1.5ex]
+    Solenoide & B = \mu_0 n I \text{ all'interno, all'esterno è nullo} \\[1.5ex]
+    Toroide (ciambella) & B = \frac{\mu_0 I N}{2 \pi R} \text{, con $N$ numero spire} \\[1.5ex]
+    Forza tra fili paralleli & F = \frac{\mu_0 I_1 I_2 l}{2 \pi R} \\[1.5ex]
+    1° Laplace  & dB = \frac{\mu_0 I d l \times \hat{r}}{4 \pi r^2} \\[1.5ex]
+    1° Laplace con 1 spira & B = \frac{\mu_0 I}{2 R} \\[1.5ex]
+    Ferromagnetismo & B = \mu_r \mu_0 n I \text{, con $\mu_r$ la permeabilità del materiale} \\[1.5ex]
+    \bottomrule
+\end{tabularx}
+
+\section{Magnetismo 2}
+\begin{tabularx}{\textwidth}{L M}
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
+    
+    \midrule
+    Flusso & \Phi(B) = B S \cos \theta \\[1.5ex]
+    Faraday (Forza Elettromotrice Indotta) & \mathcal{E}_{ind} = - \frac{d}{dt} (\Phi(B)) \text{, il flusso cambia nel tempo per $B$, $S$ o $\theta$}\\[1.5ex]
+    Corrente da F.E.M. con Ohm & I = \frac{| \mathcal{E}_{ind} |}{R} \\[1.5ex]
+    Verso corrente & \text{Se flusso fuori \textbf{aumenta} viene \textbf{respinto}, se fuori \textbf{diminuisce} viene \textbf{aiutato}} \\[1.5ex]
+    Induzione di moto & \mathcal{E}_{ind} = B L_\text{filo} v_\text{filo} \\[1.5ex]
+    Velocità limite & v_\text{max} = \frac{m g R}{B^2 L_\text{filo}^2} \\[2.5ex]
+    F.E.M. Alternatore & \mathcal{E}_\text{ind} = N B S \omega \sin(\omega t) \text{, con $S$ area, N spire, ruota a velocità $\omega$} \\[1.5ex]
+     & \mathcal{E}_\text{max} = N B S \omega \text{ (ovvero l'Ampiezza) }\\[1.5ex]
+    F.E.M. Trasformatore & \frac{V_P}{V_S} = \frac{N_P}{N_S} \text{, } V_P I_P = V_S I_S \\[1.5ex]
+    Corrente di Spostamento (Ampère-Maxwell) & I_s = \epsilon_0 \frac{d}{dt} \Phi (E) \\[1.5ex]
+    
+    \bottomrule
+\end{tabularx}
+
+
+\section{Costanti}
+\begin{tabularx}{\textwidth}{L M}
+
+    \toprule
+    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
+
+    \midrule
+    Carica elementare & e = 1.60218 \cdot 10^{-19} C \\[1.5ex]
+    Costante dielettrica vuoto & \epsilon_0 = 8.854 \cdot 10^{-12} \frac{C^2}{Nm^2} \\[1.5ex]
+    Avogadro & N_a = 6.022 \cdot 10^{23} \\[1.5ex]
+    Massa elettrone & m_e = 9.11 \cdot 10^{-31} kg \\[1.5ex]
+    Massa protone & m_p = 1.67 \cdot 10^{-27} kg \\[1.5ex]
+    Permeabilità magnetica vuoto & \mu_0 = 4 \pi \cdot 10^{-7} \ \frac{T_m}{A} \\[1.5ex]
+ 
+    \bottomrule
+
 \end{tabularx}
 
 \end{document}
