@@ -8,6 +8,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage[table]{xcolor}
+\usepackage{tikz}
 
 \definecolor{lightgray}{gray}{0.85}
 
@@ -257,6 +258,60 @@
     \bottomrule
 \end{tabularx}
 
+\section{Trigonometria}
+
+
+\definecolor{lato_colore}{RGB}{30, 41, 59}   
+\definecolor{angolo_alpha}{RGB}{220, 38, 38} 
+\definecolor{angolo_beta}{RGB}{29, 78, 216}  
+\definecolor{angolo_retto}{RGB}{21, 128, 61} 
+
+
+\begin{figure}[htbp]
+    \begin{minipage}[c]{0.55\textwidth}
+        \begin{tikzpicture}[scale=1.5, thick, >=stealth]
+            \coordinate (C) at (0,0);
+            \coordinate (B) at (5,0);
+            \coordinate (A) at (0,3.5);
+
+            \draw[fill=angolo_retto!20, draw=angolo_retto, thick] (0,0) -- (0.4,0) -- (0.4,0.4) -- (0,0.4) -- cycle;
+            
+            \begin{scope}
+                \clip (A) -- (C) -- (B) -- cycle;
+                \draw[fill=angolo_alpha!20, draw=angolo_alpha, thick] (A) circle (0.7cm);
+            \end{scope}
+            
+            \begin{scope}
+                \clip (B) -- (A) -- (C) -- cycle;
+                \draw[fill=angolo_beta!20, draw=angolo_beta, thick] (B) circle (0.8cm);
+            \end{scope}
+
+            \draw[color=lato_colore, line width=1.2pt] (C) -- (B) node[midway, below=4pt, font=\bfseries] {$a$}
+                -- (A) node[midway, above right=2pt, font=\bfseries] {$c$}
+                -- cycle node[midway, left=4pt, font=\bfseries] {$b$};
+            \node[below left, color=lato_colore] at (C) {$C$};
+            \node[below right, color=lato_colore] at (B) {$B$};
+            \node[above left, color=lato_colore] at (A) {$A$};
+
+            \node[color=angolo_alpha] at (0.25, 2.7) {$\alpha$};
+            \node[color=angolo_beta] at (4.1, 0.25) {$\beta$};
+            \node[color=angolo_retto] at (0.5, 0.5) {$\gamma = 90^\circ$};
+        \end{tikzpicture} 
+    \end{minipage}
+    \begin{minipage}[c]{0.4\textwidth}
+
+        \begin{tabularx}{\textwidth}{M}
+        a = c \cdot {\color{angolo_beta}\cos \beta} \\
+        a = c \cdot {\color{angolo_alpha}\sin \alpha} \\[1.5ex]
+        
+        b = c \cdot {\color{angolo_alpha}\cos \alpha} \\
+        b = c \cdot {\color{angolo_beta}\sin \beta} \\[1.5ex]
+        
+        c = \frac{b}{{\color{angolo_beta}\sin \beta}} = \frac{a}{{\color{angolo_alpha}\sin \alpha}} = \frac{a}{{\color{angolo_beta}\cos \beta}} = \frac{b}{{\color{angolo_alpha}\cos \alpha}}
+    \end{tabularx}
+
+    \end{minipage}
+\end{figure}
 
 \section{Costanti}
 \begin{tabularx}{\textwidth}{L M}
