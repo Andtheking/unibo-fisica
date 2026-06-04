@@ -122,6 +122,10 @@
     \grigioriga
     Forza elastica & F = -k (l - l_0) \ \text{con $k$ costante elastica} \\[1.5ex]
     \grigioriga
+    Molle in parallelo & k_{eq} = k_1 + k_2 \\[1.5ex]
+    \grigioriga
+    Molle in serie & \frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2} \\[1.5ex]
+    \grigioriga
     Oscillatore armonico & x(t) = A \cos(\omega t + \phi) \ \text{con $\omega = \sqrt{\frac{k}{m}}$, $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase} \\[1.5ex] 
     \grigioriga
     Periodo oscillatore armonico & T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{m}{k}} \\[1.5ex]
@@ -133,7 +137,9 @@
     Accelerazione max moto armonico & a_\text{max} = \omega^2 A\\[1.5ex]
     \grigioriga
     Pendolo semplice & \sum F_x = -m g \sin \theta = m a \implies a = -g \sin \theta \\[1.5ex]
+    \grigioriga
     Piccole oscillazioni pendolo & 2 \pi \sqrt{\frac{l}{g}}\\[1.5ex]
+    \grigioriga
     Trazione & T = -\vec{P} + \vec{F}_\text{risalita} = mg + m \frac{v^2}{l} \\[1.5ex]
     
     \bottomrule
@@ -166,6 +172,7 @@
     (al massimo) & U(A) = E \text{, } K = 0 \text{, con A ampiezza}\\[1.5ex]
     \grigioriga
     Potenza & P = \frac{dL}{dt} \\[1.5ex]
+    \grigioriga
     Potenza su punto materiale & P = \vec{F} \dot \vec{v} \\[1.5ex]
 
     \bottomrule
@@ -177,35 +184,65 @@
     \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
     
     \midrule
-    Carica oggetto & q = (N_p - N_e)e \\[1.5ex]
-    Costante di proporzionalità & K = \frac{1}{4 \pi \epsilon_0 [\epsilon_r]} \text{ con $\epsilon_r$ solo non nel vuoto} \\[1.5ex]
-    Coulomb, cariche puntiformi & \vec{F_{ab}} = \frac{1}{4 \pi \epsilon_0} \frac{q_a q_b}{r^2} \hat{r}_{ab} \text{ , } \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r} \\[1.5ex]
-    Accelerazione da campo & a = \frac{q\vec{E}}{m} \\[1.5ex]
-    Gauss & \Phi(\vec{E}) = \frac{Q}{\epsilon_0} \\[1.5ex]
-    Potenziale per carica & V = \frac{1}{4 \pi \epsilon_0} \frac{q}{r} \\[1.5ex]
-    Energia potenziale elettrica & U = V q \\[1.5ex]
-    Capacità & C = \frac{Q}{V} \\[1.5ex]
-    Condensatore piano & C = \frac{[\epsilon_r] \epsilon_0 A}{d} \\[1.5ex]
-    Condensatori in serie & \frac{1}{C} = \sum_i \frac{1}{  C_i} \\[1.5ex]    
-    Condensatori in parallelo & C = \sum_i C_i \\[1.5ex]
-    Energia potenziale condensatore & U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2} \\[1.5ex]   
-    Densità di energia & u = \frac{U}{A d} = \frac{1}{2} \epsilon_0 E^2 \\[1.5ex]
-    Intensità di corrente & I = \frac{dQ}{dt} = n S v_d |q| \text{, con $n$ densità portatori, $S$ sezione filo, $v_d$ velocità deriva} \\[1.5ex]
-    Densità volumica & n = \frac{dN}{dV} \text{, con $N$ numero di particelle e $V$ volume} \\[1.5ex]
-    Densità corrente & J = \frac{I}{S} = n q v_d \\[1.5ex]
-    Legge di Ohm & V = R I \\[1.5ex]
-    Resistività materiale & R = \rho \frac{l}{S} \\[1.5ex]
-    Ohm con densità corrente & \vec{E} = \rho \vec{J} \\[1.5ex]
-    Drude accelerazione con campo & \vec{a} = - \frac{e \vec{E}}{m} = \frac{\vec{F}}{m} \\[1.5ex]
-    Drude velocità deriva & \vec{v_d} = -\frac{e E}{m} \tau \text{ con $\tau$ tempo medio tra urti} \\[1.5ex]
-    Drude resistività & \rho = \frac{m}{n e^2 \tau} \\[1.5ex]
-    Resistenze in serie & R_{tot} = R_1 + R_2 \\[1.5ex]
-    Resistenze in parallelo & \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} \\[1.5ex]
-    Legge di Joule & P = V I = R I^2 = \frac{V^2}{R} \\[1.5ex]
-    Energia dissipata in resistenza & \Delta U = -V \Delta Q \\[1.5ex]
-    1° Legge Kirchoff & I_{in_1} + I_{in_2} = I_{out_1} + I_{out_2} \\[1.5ex]
-    2° Legge Kirchoff & V - R_1 I - R_2 I - R_3 I = 0 \\[1.5ex]
-    Carica condensatore & q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}}) \\[1.5ex]
+    Carica oggetto & q = (N_p - N_e)e \\
+    \grigioriga
+    Costante di proporzionalità & K = \frac{1}{4 \pi \epsilon_0 [\epsilon_r]} \text{ con $\epsilon_r$ solo non nel vuoto} \\
+    \grigioriga
+    Coulomb, cariche puntiformi & \vec{F_{ab}} = \frac{1}{4 \pi \epsilon_0} \frac{q_a q_b}{r^2} \hat{r}_{ab} \text{ , } \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r} \\
+    \grigioriga
+    Campo da Forza & \vec{E} = \frac{\vec{F}}{q} \\
+    \grigioriga
+    Accelerazione da campo & a = \frac{q\vec{E}}{m} \\
+    \grigioriga
+    Gauss & \Phi(\vec{E}) = \oint_A \vec{E} \cdot d\vec{A} = \frac{Q}{\epsilon_0} \\
+    \grigioriga
+    Potenziale per carica & V = \frac{1}{4 \pi \epsilon_0} \frac{q}{r} \\
+    \grigioriga
+    Energia potenziale elettrica & U = V q \\
+    \grigioriga
+    Capacità & C = \frac{Q}{V} \\
+    \grigioriga
+    Condensatore piano & C = \frac{[\epsilon_r] \epsilon_0 A}{d} \\
+    \grigioriga
+    Condensatori in serie & \frac{1}{C} = \sum_i \frac{1}{  C_i} \\    
+    \grigioriga
+    Condensatori in parallelo & C = \sum_i C_i \\
+    \grigioriga
+    Energia potenziale condensatore & U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2} \\   
+    \grigioriga
+    Densità di energia & u = \frac{U}{A d} = \frac{1}{2} \epsilon_0 E^2 \\
+    \grigioriga
+    Intensità di corrente & I = \frac{dQ}{dt} = n S v_d |q| \text{, con $n$ densità portatori, $S$ sezione filo, $v_d$ velocità deriva} \\
+    \grigioriga
+    Densità volumica & n = \frac{dN}{dV} \text{, con $N$ numero di particelle e $V$ volume} \\
+    \grigioriga
+    Densità corrente & J = \frac{I}{S} = n q v_d \\
+    \grigioriga
+    Legge di Ohm & V = R I \\
+    \grigioriga
+    Resistività materiale & R = \rho \frac{l}{S} \\
+    \grigioriga
+    Ohm con densità corrente & \vec{E} = \rho \vec{J} \\
+    \grigioriga
+    Drude accelerazione con campo & \vec{a} = - \frac{e \vec{E}}{m} = \frac{\vec{F}}{m} \\
+    \grigioriga
+    Drude velocità deriva & \vec{v_d} = -\frac{e E}{m} \tau \text{ con $\tau$ tempo medio tra urti} \\
+    \grigioriga
+    Drude resistività & \rho = \frac{m}{n e^2 \tau} \\
+    \grigioriga
+    Resistenze in serie & R_{tot} = R_1 + R_2 \\
+    \grigioriga
+    Resistenze in parallelo & \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} \\
+    \grigioriga
+    Legge di Joule & P = V I = R I^2 = \frac{V^2}{R} \\
+    \grigioriga
+    Energia dissipata in resistenza & \Delta U = -V \Delta Q \\
+    \grigioriga
+    1° Legge Kirchoff & I_{in_1} + I_{in_2} = I_{out_1} + I_{out_2} \\
+    \grigioriga
+    2° Legge Kirchoff & V - R_1 I - R_2 I - R_3 I = 0 \\
+    \grigioriga
+    Carica condensatore & q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}}) \\
     \bottomrule
 \end{tabularx}
 
@@ -254,7 +291,7 @@
      & \mathcal{E}_\text{max} = N B S \omega \text{ (ovvero l'Ampiezza) }\\[1.5ex]
     F.E.M. Trasformatore & \frac{V_P}{V_S} = \frac{N_P}{N_S} \text{, } V_P I_P = V_S I_S \\[1.5ex]
     Corrente di Spostamento (Ampère-Maxwell) & I_s = \epsilon_0 \frac{d}{dt} \Phi (E) \\[1.5ex]
-    
+
     \bottomrule
 \end{tabularx}
 
