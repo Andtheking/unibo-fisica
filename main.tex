@@ -1,371 +1,249 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper,twocolumn,landscape]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{geometry}
 \usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{array}
-\usepackage[table]{xcolor}
+\usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{titlesec} 
 
 \definecolor{lightgray}{gray}{0.85}
-
-\newcommand{\grigioriga}{\arrayrulecolor{lightgray}\midrule\arrayrulecolor{black}}
-
-\geometry{
-    a4paper,
-    left=15mm,
-    right=15mm,
-    top=20mm,
-    bottom=20mm
-}
-
-\newcolumntype{M}{>{\centering\arraybackslash$\displaystyle}X<{$}}
-\newcolumntype{L}{>{\raggedright\arraybackslash\bfseries}p{5cm}}
-
-\title{\Huge\textbf{Formulario Fisica}}
-\author{}
-\date{}
-
-\begin{document}
-
-\maketitle
-
-\section{Cinematica}
-
-\subsection{Leggi orarie}
-
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Descrizione & \multicolumn{1}{c}{\large Formula} \\ 
-    
-    \midrule
-    Spostamento & x(t) = x_0 + v_0 t + \frac{1}{2} a t^2 \\[1.5ex]
-    \grigioriga
-    Velocità & v(t) = v_0 + a(t - t_0) \\[1.5ex]
-    \grigioriga
-    Velocità in Posizione & v^2(x) = v_0^2 + 2a(x - x_1) \\
-    \grigioriga
-    Media & v = \frac{v_1 - v_0}{v_1 - t_0} \ \text{(analogo per accelerazione)}\\[1.5ex]
-    \grigioriga
-    Velocità con accelerazione & v(t) = v_0 + \int_{t_0}^{t_1} a(t) \ dt \\[1.5ex]
-    
-    \bottomrule
-\end{tabularx}
-
-\subsection{Moto del proiettile}
-
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\ 
-    
-    \midrule
-    Posizione x & x(t) = x_0 + (v_0 \cos\phi_0)t \\[1.5ex]
-    \grigioriga
-    Posizione y & y(t) = y_0 + (v_0 \sin\phi_0)t - \frac{1}{2}gt^2 \\[1.5ex]
-    \grigioriga
-    Modulo velocità & |\vec{v}| = \sqrt{v_x^2 + v_y^2} \\[1.5ex]
-    \grigioriga
-    Angolo iniziale & tan\phi_0 = \frac{v_y}{v_x} \\[1.5ex]
-    \grigioriga
-    Gittata & R = \frac{v_0^2}{g} \sin 2\phi_0 \\[1.5ex] 
-
-    \bottomrule
-\end{tabularx}
-
-\subsection{Moto circolare}
-
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-    
-    \midrule
-    Posizione x & x = R \cos \theta \\[1.5ex]
-    \grigioriga
-    Posizione y & y = R \sin \theta \\[1.5ex]
-    \grigioriga
-    Vettore posizione & \vec{r} = R \cos\theta \hat{i} + R \sin\theta \hat{j} \\[1.5ex]
-    \grigioriga
-    Velocità angolare & \omega = \frac{v_s}{R} \\[1.5ex]
-    \grigioriga
-    Angolo orario & \theta(t) = \theta_0 + \omega(t - t_0) \\[1.5ex]
-    \grigioriga
-    Accelerazione centripeta & a_c = \omega^2 R = \frac{v_s^2}{R} = v_s \omega \\[1.5ex]
-    \grigioriga
-    Accelerazione angolare & \alpha = \frac{d\omega}{dt} \\[1.5ex]
-    \grigioriga
-    Accelerazione tangenziale & a_t = \alpha R\\[1.5ex]
-    \grigioriga
-    Accelerazione totale & a = \sqrt{a_c^2 + a_t^2} = R\sqrt{\omega^4 + \alpha^2} \\[1.5ex]
-    
-    \bottomrule
-\end{tabularx}
-
-\section{Forze}
-
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-    
-    \midrule
-    2° Legge di Newton & \vec{F} = m\vec{a} \\[1.5ex]
-    \grigioriga
-    Forza peso & \vec{P} = m\vec{g} \\[1.5ex]
-    \grigioriga
-    Forza vettoriale & \vec{F} = F\cos\theta + F\sin\theta \\[1.5ex]
-    \grigioriga
-    Forza di attrito statica & F_s \le \mu_s N \\[1.5ex]
-    \grigioriga
-    Forza di attrito dinamica & F_k = \mu_k N  \\[1.5ex]
-    \grigioriga
-    Forza elastica & F = -k (l - l_0) \ \text{con $k$ costante elastica} \\[1.5ex]
-    \grigioriga
-    Molle in parallelo & k_{eq} = k_1 + k_2 \\[1.5ex]
-    \grigioriga
-    Molle in serie & \frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2} \\[1.5ex]
-    \grigioriga
-    Oscillatore armonico & x(t) = A \cos(\omega t + \phi) \ \text{con $\omega = \sqrt{\frac{k}{m}}$, $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase} \\[1.5ex] 
-    \grigioriga
-    Periodo oscillatore armonico & T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{m}{k}} \\[1.5ex]
-    \grigioriga
-    Frequenza oscillatore armonico & \nu = \frac{1}{T} = \frac{\omega}{2\pi} = \frac{1}{2\pi} \sqrt{\frac{k}{m}} \\[1.5ex]
-    \grigioriga
-    Velocità max moto armonico & v_{\text{max}} = \omega A \\[1.5ex]
-    \grigioriga
-    Accelerazione max moto armonico & a_\text{max} = \omega^2 A\\[1.5ex]
-    \grigioriga
-    Pendolo semplice & \sum F_x = -m g \sin \theta = m a \implies a = -g \sin \theta \\[1.5ex]
-    \grigioriga
-    Piccole oscillazioni pendolo & 2 \pi \sqrt{\frac{l}{g}}\\[1.5ex]
-    \grigioriga
-    Trazione & T = -\vec{P} + \vec{F}_\text{risalita} = mg + m \frac{v^2}{l} \\[1.5ex]
-    
-    \bottomrule
-\end{tabularx}
-
-\subsection{Lavoro ed Energia}{}
-
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-    
-    \midrule
-    Lavoro & L = 
-        \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = 
-        \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = 
-        F \frac{\Delta x}{\sin(\Theta)} \cos(\frac{\pi}{2} - \Theta) \\[1.5ex]
-    \grigioriga
-    Energia cinetica & K = \frac{1}{2} m v^2 \\[1.5ex]
-    \grigioriga
-    Energia potenziale & \text{d}U = -F \text{d}x\\[1.5ex]
-    \grigioriga
-    Energia meccanica & E = U + K \\[1.5ex]
-    \grigioriga
-    Energia potenziale peso & U(y) = mgy \\[1.5ex]
-    \grigioriga
-    Energia potenziale elastica & U(x) = \frac{1}{2} k x^2 \\[1.5ex]
-    \grigioriga
-    Energia meccanica oscillatore armonico & E = k + U = \frac{1}{2} m v^2 + \frac{1}{2} k x^2 \\[3.5ex]
-    (in equilibrio) & U(0) = 0 \text{, } K = E\\[1.5ex]
-    (al massimo) & U(A) = E \text{, } K = 0 \text{, con A ampiezza}\\[1.5ex]
-    \grigioriga
-    Potenza & P = \frac{dL}{dt} \\[1.5ex]
-    \grigioriga
-    Potenza su punto materiale & P = \vec{F} \dot \vec{v} \\[1.5ex]
-
-    \bottomrule
-\end{tabularx}
-
-\section{Elettrostatica}
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-    
-    \midrule
-    Carica oggetto & q = (N_p - N_e)e \\
-    \grigioriga
-    Costante di proporzionalità & K = \frac{1}{4 \pi \epsilon_0 [\epsilon_r]} \text{ con $\epsilon_r$ solo non nel vuoto} \\
-    \grigioriga
-    Coulomb, cariche puntiformi & \vec{F_{ab}} = \frac{1}{4 \pi \epsilon_0} \frac{q_a q_b}{r^2} \hat{r}_{ab} \text{ , } \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r} \\
-    \grigioriga
-    Campo da Forza & \vec{E} = \frac{\vec{F}}{q} \\
-    \grigioriga
-    Accelerazione da campo & a = \frac{q\vec{E}}{m} \\
-    \grigioriga
-    Gauss & \Phi(\vec{E}) = \oint_A \vec{E} \cdot d\vec{A} = \frac{Q}{\epsilon_0} \\
-    \grigioriga
-    Potenziale per carica & V = \frac{1}{4 \pi \epsilon_0} \frac{q}{r} \\
-    \grigioriga
-    Energia potenziale elettrica & U = V q \\
-    \grigioriga
-    Capacità & C = \frac{Q}{V} \\
-    \grigioriga
-    Condensatore piano & C = \frac{[\epsilon_r] \epsilon_0 A}{d} \\
-    \grigioriga
-    Condensatori in serie & \frac{1}{C} = \sum_i \frac{1}{  C_i} \\    
-    \grigioriga
-    Condensatori in parallelo & C = \sum_i C_i \\
-    \grigioriga
-    Energia potenziale condensatore & U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2} \\   
-    \grigioriga
-    Densità di energia & u = \frac{U}{A d} = \frac{1}{2} \epsilon_0 E^2 \\
-    \grigioriga
-    Intensità di corrente & I = \frac{dQ}{dt} = n S v_d |q| \text{, con $n$ densità portatori, $S$ sezione filo, $v_d$ velocità deriva} \\
-    \grigioriga
-    Densità volumica & n = \frac{dN}{dV} \text{, con $N$ numero di particelle e $V$ volume} \\
-    \grigioriga
-    Densità corrente & J = \frac{I}{S} = n q v_d \\
-    \grigioriga
-    Legge di Ohm & V = R I \\
-    \grigioriga
-    Resistività materiale & R = \rho \frac{l}{S} \\
-    \grigioriga
-    Ohm con densità corrente & \vec{E} = \rho \vec{J} \\
-    \grigioriga
-    Drude accelerazione con campo & \vec{a} = - \frac{e \vec{E}}{m} = \frac{\vec{F}}{m} \\
-    \grigioriga
-    Drude velocità deriva & \vec{v_d} = -\frac{e E}{m} \tau \text{ con $\tau$ tempo medio tra urti} \\
-    \grigioriga
-    Drude resistività & \rho = \frac{m}{n e^2 \tau} \\
-    \grigioriga
-    Resistenze in serie & R_{tot} = R_1 + R_2 \\
-    \grigioriga
-    Resistenze in parallelo & \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} \\
-    \grigioriga
-    Legge di Joule & P = V I = R I^2 = \frac{V^2}{R} \\
-    \grigioriga
-    Energia dissipata in resistenza & \Delta U = -V \Delta Q \\
-    \grigioriga
-    1° Legge Kirchoff & I_{in_1} + I_{in_2} = I_{out_1} + I_{out_2} \\
-    \grigioriga
-    2° Legge Kirchoff & V - R_1 I - R_2 I - R_3 I = 0 \\
-    \grigioriga
-    Carica condensatore & q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}}) \\
-    \bottomrule
-\end{tabularx}
-
-\section{Magnetismo}
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-    
-    \midrule
-    Campo generato da un filo & B \propto \frac{i}{r} \text{, con $i$ corrente nel filo, $r$ distanza dal filo} \\[1.5ex]
-    Legge di Lorentz & \vec{F} = q \vec{V} \cdot \vec{B} \\[1.5ex]
-    Lorents con campo E & \vec{F} = q \vec{E} + q (\vec{v} \cdot \vec{B}) \\[1.5ex]
-    Modulo Lorenz & F = |q| v B \sin \theta \text{, con $\theta$ angolo tra velocità e campo} \\[1.5ex]
-    Moto campo magnetico uniforme & r = \frac{m v}{q B} \text{, } \omega_C = \frac{q B}{m} \text{ (detta frequenza di ciclotrone), } \nu = \frac{\omega_C}{2 \pi} \\[1.5ex]
-    Velocità in ciclotrone & v = \frac{E}{B} \\[1.5ex]
-    Thomson & \frac{e}{m} = \frac{y E}{B^2 (LD + \frac{L^2}{2})} \\[1.5ex]
-    Campo di Hall & E_H = \frac{J B}{n q} = v_d B\\[1.5ex]
-    Coefficiente di Hall & R_H = \frac{E_H}{JB} = \frac{1}{n q} \\[1.5ex]
-    Filo rettilineo & F = I l \times B\\[1.5ex]
-    Momento meccanico torcente & \tau = I S \times B \\[1.5ex]
-    Teorema di Ampére & \oint B \ dr = \mu_0 \sum I_{conc}  \\[1.5ex]
-    Filo dritto infinito & B = \frac{\mu_0 I}{2 \pi R} \\[1.5ex]
-    Interno del filo & B = \frac{\mu_0 I R}{2 \pi a^2} \\[1.5ex]
-    Solenoide & B = \mu_0 n I \text{ all'interno, all'esterno è nullo} \\[1.5ex]
-    Toroide (ciambella) & B = \frac{\mu_0 I N}{2 \pi R} \text{, con $N$ numero spire} \\[1.5ex]
-    Forza tra fili paralleli & F = \frac{\mu_0 I_1 I_2 l}{2 \pi R} \\[1.5ex]
-    1° Laplace  & dB = \frac{\mu_0 I d l \times \hat{r}}{4 \pi r^2} \\[1.5ex]
-    1° Laplace con 1 spira & B = \frac{\mu_0 I}{2 R} \\[1.5ex]
-    Ferromagnetismo & B = \mu_r \mu_0 n I \text{, con $\mu_r$ la permeabilità del materiale} \\[1.5ex]
-    \bottomrule
-\end{tabularx}
-
-\section{Magnetismo 2}
-\begin{tabularx}{\textwidth}{L M}
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-    
-    \midrule
-    Flusso & \Phi(B) = B S \cos \theta \\[1.5ex]
-    Faraday (Forza Elettromotrice Indotta) & \mathcal{E}_{ind} = - \frac{d}{dt} (\Phi(B)) \text{, il flusso cambia nel tempo per $B$, $S$ o $\theta$}\\[1.5ex]
-    Corrente da F.E.M. con Ohm & I = \frac{| \mathcal{E}_{ind} |}{R} \\[1.5ex]
-    Verso corrente & \text{Se flusso fuori \textbf{aumenta} viene \textbf{respinto}, se fuori \textbf{diminuisce} viene \textbf{aiutato}} \\[1.5ex]
-    Induzione di moto & \mathcal{E}_{ind} = B L_\text{filo} v_\text{filo} \\[1.5ex]
-    Velocità limite & v_\text{max} = \frac{m g R}{B^2 L_\text{filo}^2} \\[2.5ex]
-    F.E.M. Alternatore & \mathcal{E}_\text{ind} = N B S \omega \sin(\omega t) \text{, con $S$ area, N spire, ruota a velocità $\omega$} \\[1.5ex]
-     & \mathcal{E}_\text{max} = N B S \omega \text{ (ovvero l'Ampiezza) }\\[1.5ex]
-    F.E.M. Trasformatore & \frac{V_P}{V_S} = \frac{N_P}{N_S} \text{, } V_P I_P = V_S I_S \\[1.5ex]
-    Corrente di Spostamento (Ampère-Maxwell) & I_s = \epsilon_0 \frac{d}{dt} \Phi (E) \\[1.5ex]
-
-    \bottomrule
-\end{tabularx}
-
-\section{Trigonometria}
-
-
 \definecolor{lato_colore}{RGB}{30, 41, 59}   
 \definecolor{angolo_alpha}{RGB}{220, 38, 38} 
 \definecolor{angolo_beta}{RGB}{29, 78, 216}  
 \definecolor{angolo_retto}{RGB}{21, 128, 61} 
 
+\geometry{
+    a4paper,
+    left=12mm,
+    right=12mm,
+    top=12mm,
+    bottom=15mm,
+    columnsep=12mm
+}
 
-\begin{figure}[htbp]
-    \begin{minipage}[c]{0.55\textwidth}
-        \begin{tikzpicture}[scale=1.5, thick, >=stealth]
-            \coordinate (C) at (0,0);
-            \coordinate (B) at (5,0);
-            \coordinate (A) at (0,3.5);
+\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1ex plus 0.5ex minus .2ex}{0.5ex plus .2ex}
 
-            \draw[fill=angolo_retto!20, draw=angolo_retto, thick] (0,0) -- (0.4,0) -- (0.4,0.4) -- (0,0.4) -- cycle;
-            
-            \begin{scope}
-                \clip (A) -- (C) -- (B) -- cycle;
-                \draw[fill=angolo_alpha!20, draw=angolo_alpha, thick] (A) circle (0.7cm);
-            \end{scope}
-            
-            \begin{scope}
-                \clip (B) -- (A) -- (C) -- cycle;
-                \draw[fill=angolo_beta!20, draw=angolo_beta, thick] (B) circle (0.8cm);
-            \end{scope}
+\newcommand{\frmheader}[2]{
+    \par\vspace{0.5ex}\noindent
+    \begin{minipage}{\columnwidth}
+        \begin{tabularx}{\columnwidth}{@{} >{\raggedright\arraybackslash\bfseries}p{4cm} >{\centering\arraybackslash\bfseries}X @{}}
+            \rule{0pt}{2ex}#1 & #2 \\[0.5ex]
+        \end{tabularx}
+        \hrule height 1pt
+    \end{minipage}\par
+}
 
-            \draw[color=lato_colore, line width=1.2pt] (C) -- (B) node[midway, below=4pt, font=\bfseries] {$a$}
-                -- (A) node[midway, above right=2pt, font=\bfseries] {$c$}
-                -- cycle node[midway, left=4pt, font=\bfseries] {$b$};
-            \node[below left, color=lato_colore] at (C) {$C$};
-            \node[below right, color=lato_colore] at (B) {$B$};
-            \node[above left, color=lato_colore] at (A) {$A$};
+\newcommand{\frm}[2]{
+    \par\noindent
+    \begin{minipage}{\columnwidth}
+            \begin{tabularx}{\columnwidth}{@{} >{\raggedright\arraybackslash\bfseries}p{4cm} >{\centering\arraybackslash$\displaystyle}X<{$} @{}}
+                \rule{0pt}{3ex}#1 & #2 \\[1.5ex]
+            \end{tabularx}
+            {\color{lightgray}\hrule}
+    \end{minipage}\par
+}
 
-            \node[color=angolo_alpha] at (0.25, 2.7) {$\alpha$};
-            \node[color=angolo_beta] at (4.1, 0.25) {$\beta$};
-            \node[color=angolo_retto] at (0.5, 0.5) {$\gamma = 90^\circ$};
-        \end{tikzpicture} 
-    \end{minipage}
-    \begin{minipage}[c]{0.4\textwidth}
+\begin{document}
 
-        \begin{tabularx}{\textwidth}{M}
-        a = c \cdot {\color{angolo_beta}\cos \beta} \\
-        a = c \cdot {\color{angolo_alpha}\sin \alpha} \\[1.5ex]
+\twocolumn[
+    \begin{center}
+        {\huge\textbf{Formulario Fisica}}\vspace{0.4cm}
+    \end{center}
+]
+
+\section{Cinematica}
+
+\subsection{Leggi orarie}
+\frmheader{Descrizione}{Formula}
+\frm{Spostamento}{x(t) = x_0 + v_0 t + \frac{1}{2} a t^2}
+\frm{Velocità}{v(t) = v_0 + a(t - t_0)}
+\frm{Velocità in Posizione}{v^2(x) = v_0^2 + 2a(x - x_1)}
+\frm{Media}{v = \frac{v_1 - v_0}{v_1 - t_0} \ \text{(analogo per accelerazione)}}
+\frm{Velocità con accelerazione}{v(t) = v_0 + \int_{t_0}^{t_1} a(t) \ dt}
+
+\subsection{Moto del proiettile}
+\frmheader{Nome Formula}{Formula}
+\frm{Posizione x}{x(t) = x_0 + (v_0 \cos\phi_0)t}
+\frm{Posizione y}{y(t) = y_0 + (v_0 \sin\phi_0)t - \frac{1}{2}gt^2}
+\frm{Modulo velocità}{|\vec{v}| = \sqrt{v_x^2 + v_y^2}}
+\frm{Angolo iniziale}{\tan\phi_0 = \frac{v_y}{v_x}}
+\frm{Gittata}{R = \frac{v_0^2}{g} \sin 2\phi_0}
+
+\subsection{Moto circolare}
+\frmheader{Nome Formula}{Formula}
+\frm{Posizione x}{x = R \cos \theta}
+\frm{Posizione y}{y = R \sin \theta}
+\frm{Vettore posizione}{\vec{r} = R \cos\theta \hat{i} + R \sin\theta \hat{j}}
+\frm{Velocità angolare}{\omega = \frac{v_s}{R}}
+\frm{Angolo orario}{\theta(t) = \theta_0 + \omega(t - t_0)}
+\frm{Accelerazione centripeta}{a_c = \omega^2 R = \frac{v_s^2}{R} = v_s \omega}
+\frm{Accelerazione angolare}{\alpha = \frac{d\omega}{dt}}
+\frm{Accelerazione tangenziale}{a_t = \alpha R}
+\frm{Accelerazione totale}{a = \sqrt{a_c^2 + a_t^2} = R\sqrt{\omega^4 + \alpha^2}}
+
+
+
+\section{Forze}
+\frmheader{Nome Formula}{Formula}
+\frm{2° Legge di Newton}{\vec{F} = m\vec{a}}
+\frm{Forza peso}{\vec{P} = m\vec{g}}
+\frm{Forza vettoriale}{\vec{F} = F\cos\theta + F\sin\theta}
+\frm{Forza di attrito statica}{F_s \le \mu_s N}
+\frm{Forza di attrito dinamica}{F_k = \mu_k N}
+\frm{Forza elastica}{F = -k (l - l_0) \ \text{con $k$ costante elastica}}
+\frm{Molle in parallelo}{k_{eq} = k_1 + k_2}
+\frm{Molle in serie}{\frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2}}
+\frm{Oscillatore armonico}{x(t) = A \cos(\omega t + \phi) \ \text{con $\omega = \sqrt{\frac{k}{m}}$, $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase}}
+\frm{Periodo oscillatore armonico}{T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{m}{k}}}
+\frm{Frequenza oscillatore armonico}{\nu = \frac{1}{T} = \frac{\omega}{2\pi} = \frac{1}{2\pi} \sqrt{\frac{k}{m}}}
+\frm{Velocità max moto armonico}{v_{\text{max}} = \omega A}
+\frm{Accelerazione max moto armonico}{a_\text{max} = \omega^2 A}
+\frm{Pendolo semplice}{\sum F_x = -m g \sin \theta = m a \implies a = -g \sin \theta}
+\frm{Piccole oscillazioni pendolo}{2 \pi \sqrt{\frac{l}{g}}}
+\frm{Trazione}{T = -\vec{P} + \vec{F}_\text{risalita} = mg + m \frac{v^2}{l}}
+
+\subsection{Trigonometria}
+\begin{minipage}{0.45\columnwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.1, thick, >=stealth]
+        \coordinate (C) at (0,0);
+        \coordinate (B) at (4,0);
+        \coordinate (A) at (0,3);
+
+        \draw[fill=angolo_retto!20, draw=angolo_retto, thick] (0,0) -- (0.4,0) -- (0.4,0.4) -- (0,0.4) -- cycle;
         
-        b = c \cdot {\color{angolo_alpha}\cos \alpha} \\
-        b = c \cdot {\color{angolo_beta}\sin \beta} \\[1.5ex]
+        \begin{scope}
+            \clip (A) -- (C) -- (B) -- cycle;
+            \draw[fill=angolo_alpha!20, draw=angolo_alpha, thick] (A) circle (0.7cm);
+        \end{scope}
         
+        \begin{scope}
+            \clip (B) -- (A) -- (C) -- cycle;
+            \draw[fill=angolo_beta!20, draw=angolo_beta, thick] (B) circle (0.8cm);
+        \end{scope}
+
+        \draw[color=lato_colore, line width=1.2pt] (C) -- (B) node[midway, below=4pt, font=\bfseries] {$a$}
+            -- (A) node[midway, above right=2pt, font=\bfseries] {$c$}
+            -- cycle node[midway, left=4pt, font=\bfseries] {$b$};
+        \node[below left, color=lato_colore] at (C) {$C$};
+        \node[below right, color=lato_colore] at (B) {$B$};
+        \node[above left, color=lato_colore] at (A) {$A$};
+
+        \node[color=angolo_alpha] at (0.40, 2.25) {$\alpha$};
+        \node[color=angolo_beta] at (3.1, 0.25) {$\beta$};
+        \node[color=angolo_retto] at (0.5, 0.5) {$\gamma$};
+    \end{tikzpicture} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\columnwidth}
+    \begin{tabularx}{\linewidth}{>{\centering\arraybackslash$\displaystyle}X<{$}}
+        a = c \cdot {\color{angolo_beta}\cos \beta} = c \cdot {\color{angolo_alpha}\sin \alpha} \\[1.5ex]
+        b = c \cdot {\color{angolo_alpha}\cos \alpha} = c \cdot {\color{angolo_beta}\sin \beta} \\[1.5ex]
         c = \frac{b}{{\color{angolo_beta}\sin \beta}} = \frac{a}{{\color{angolo_alpha}\sin \alpha}} = \frac{a}{{\color{angolo_beta}\cos \beta}} = \frac{b}{{\color{angolo_alpha}\cos \alpha}}
     \end{tabularx}
+\end{minipage}
 
-    \end{minipage}
-\end{figure}
 
+\subsection{Lavoro ed Energia}
+\frmheader{Nome Formula}{Formula}
+\frm{Lavoro}{L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = F \frac{\Delta x}{\sin(\Theta)} \cos(\frac{\pi}{2} - \Theta)}
+\frm{Energia cinetica}{K = \frac{1}{2} m v^2}
+\frm{Energia potenziale}{\text{d}U = -F \text{d}x}
+\frm{Energia meccanica}{E = U + K}
+\frm{Energia potenziale peso}{U(y) = mgy}
+\frm{Energia potenziale elastica}{U(x) = \frac{1}{2} k x^2}
+\frm{Energia meccanica oscillatore armonico}{E = K + U = \frac{1}{2} m v^2 + \frac{1}{2} k x^2}
+\frm{(in equilibrio)}{U(0) = 0 \text{, } K = E}
+\frm{(al massimo)}{U(A) = E \text{, } K = 0 \text{, con A ampiezza}}
+\frm{Potenza}{P = \frac{dL}{dt}}
+\frm{Potenza su punto materiale}{P = \vec{F} \dot \vec{v}}
+
+
+\section{Elettrostatica}
+\frmheader{Nome Formula}{Formula}
+\frm{Carica oggetto}{q = (N_p - N_e)e}
+\frm{Costante di proporzionalità}{K = \frac{1}{4 \pi \epsilon_0 [\epsilon_r]} \text{ con $\epsilon_r$ solo non nel vuoto}}
+\frm{Coulomb, cariche puntiformi}{\vec{F_{ab}} = \frac{1}{4 \pi \epsilon_0} \frac{q_a q_b}{r^2} \hat{r}_{ab} \text{ , } \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r}}
+\frm{Campo da Forza}{\vec{E} = \frac{\vec{F}}{q}}
+\frm{Accelerazione da campo}{a = \frac{q\vec{E}}{m}}
+\frm{Gauss}{\Phi(\vec{E}) = \oint_A \vec{E} \cdot d\vec{A} = \frac{Q}{\epsilon_0}}
+\frm{Potenziale per carica}{V = \frac{1}{4 \pi \epsilon_0} \frac{q}{r}}
+\frm{Energia potenziale elettrica}{U = V q}
+\frm{Capacità}{C = \frac{Q}{V}}
+\frm{Condensatore piano}{C = \frac{[\epsilon_r] \epsilon_0 A}{d}}
+\frm{Condensatori in serie}{\frac{1}{C} = \sum_i \frac{1}{  C_i}}
+\frm{Condensatori in parallelo}{C = \sum_i C_i}
+\frm{Energia potenziale condensatore}{U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2}}
+\frm{Densità di energia}{u = \frac{U}{A d} = \frac{1}{2} \epsilon_0 E^2}
+\frm{Intensità di corrente \newline \scriptsize{$n$ densità portatori, $S$ sezione filo, $v_d$ velocità deriva}}{I = \frac{dQ}{dt} = n S v_d |q|}
+\frm{Densità volumica}{n = \frac{dN}{dV} \text{, con $N$ numero di particelle e $V$ volume}}
+\frm{Densità corrente}{J = \frac{I}{S} = n q v_d}
+\frm{Legge di Ohm}{V = R I}
+\frm{Resistività materiale}{R = \rho \frac{l}{S}}
+\frm{Ohm con densità corrente}{\vec{E} = \rho \vec{J}}
+\frm{Drude accelerazione con campo}{\vec{a} = - \frac{e \vec{E}}{m} = \frac{\vec{F}}{m}}
+\frm{Drude velocità deriva}{\vec{v_d} = -\frac{e E}{m} \tau \text{ con $\tau$ tempo medio tra urti}}
+\frm{Drude resistività}{\rho = \frac{m}{n e^2 \tau}}
+\frm{Resistenze in serie}{R_{tot} = R_1 + R_2}
+\frm{Resistenze in parallelo}{\frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2}}
+\frm{Legge di Joule}{P = V I = R I^2 = \frac{V^2}{R}}
+\frm{Energia dissipata in resistenza}{\Delta U = -V \Delta Q}
+\frm{1° Legge Kirchoff}{I_{in_1} + I_{in_2} = I_{out_1} + I_{out_2}}
+\frm{2° Legge Kirchoff}{V - R_1 I - R_2 I - R_3 I = 0}
+\frm{Carica condensatore}{q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}})}
+
+
+\section{Magnetismo}
+\frmheader{Nome Formula}{Formula}
+\frm{Campo generato da un filo}{B \propto \frac{i}{r} \text{, con $i$ corrente nel filo, $r$ distanza dal filo}}
+\frm{Legge di Lorentz}{\vec{F} = q \vec{V} \cdot \vec{B}}
+\frm{Lorents con campo E}{\vec{F} = q \vec{E} + q (\vec{v} \cdot \vec{B})}
+\frm{Modulo Lorenz}{F = |q| v B \sin \theta \text{, con $\theta$ angolo tra velocità e campo}}
+\frm{Moto campo magnetico uniforme}{r = \frac{m v}{q B} \text{, } \omega_C = \frac{q B}{m} \text{ (detta frequenza di ciclotrone), } \nu = \frac{\omega_C}{2 \pi}}
+\frm{Velocità in ciclotrone}{v = \frac{E}{B}}
+\frm{Thomson}{\frac{e}{m} = \frac{y E}{B^2 (LD + \frac{L^2}{2})}}
+\frm{Campo di Hall}{E_H = \frac{J B}{n q} = v_d B}
+\frm{Coefficiente di Hall}{R_H = \frac{E_H}{JB} = \frac{1}{n q}}
+\frm{Filo rettilineo}{F = I l \times B}
+\frm{Momento meccanico torcente}{\tau = I S \times B}
+\frm{Teorema di Ampére}{\oint B \ dr = \mu_0 \sum I_{conc}}
+\frm{Filo dritto infinito}{B = \frac{\mu_0 I}{2 \pi R}}
+\frm{Interno del filo}{B = \frac{\mu_0 I R}{2 \pi a^2}}
+\frm{Solenoide}{B = \mu_0 n I \text{ all'interno, all'esterno è nullo}}
+\frm{Toroide (ciambella)}{B = \frac{\mu_0 I N}{2 \pi R} \text{, con $N$ numero spire}}
+\frm{Forza tra fili paralleli}{F = \frac{\mu_0 I_1 I_2 l}{2 \pi R}}
+\frm{1° Laplace}{dB = \frac{\mu_0 I d l \times \hat{r}}{4 \pi r^2}}
+\frm{1° Laplace con 1 spira}{B = \frac{\mu_0 I}{2 R}}
+\frm{Ferromagnetismo}{B = \mu_r \mu_0 n I \text{, con $\mu_r$ la permeabilità del materiale}}
+
+
+\section{Magnetismo 2}
+\frmheader{Nome Formula}{Formula}
+\frm{Flusso}{\Phi(B) = B S \cos \theta}
+\frm{Faraday (Forza Elettromotrice Indotta)}{\mathcal{E}_{ind} = - \frac{d}{dt} (\Phi(B)) \text{, il flusso cambia nel tempo per $B$, $S$ o $\theta$}}
+\frm{Corrente da F.E.M. con Ohm}{I = \frac{| \mathcal{E}_{ind} |}{R}}
+\frm{Verso corrente}{\text{Se fuori \textbf{aumenta} viene \textbf{respinto}} \\ & \text{se fuori \textbf{diminuisce} viene \textbf{aiutato}}}
+\frm{Induzione di moto}{\mathcal{E}_{ind} = B L_\text{filo} v_\text{filo}}
+\frm{Velocità limite}{v_\text{max} = \frac{m g R}{B^2 L_\text{filo}^2}}
+\frm{F.E.M. Alternatore}{\mathcal{E}_\text{ind} = N B S \omega \sin(\omega t) \text{, con $S$ area, N spire, ruota a velocità $\omega$}}
+\frm{}{\mathcal{E}_\text{max} = N B S \omega \text{ (ovvero l'Ampiezza) }}
+\frm{F.E.M. Trasformatore}{\frac{V_P}{V_S} = \frac{N_P}{N_S} \text{, } V_P I_P = V_S I_S}
+\frm{Corrente di Spostamento (Ampère-Maxwell)}{I_s = \epsilon_0 \frac{d}{dt} \Phi (E)}
+
+
+
+\newpage
 \section{Costanti}
-\begin{tabularx}{\textwidth}{L M}
-
-    \toprule
-    \large Nome Formula & \multicolumn{1}{c}{\large Formula} \\
-
-    \midrule
-    Carica elementare & e = 1.60218 \cdot 10^{-19} C \\[1.5ex]
-    Costante dielettrica vuoto & \epsilon_0 = 8.854 \cdot 10^{-12} \frac{C^2}{Nm^2} \\[1.5ex]
-    Avogadro & N_a = 6.022 \cdot 10^{23} \\[1.5ex]
-    Massa elettrone & m_e = 9.11 \cdot 10^{-31} kg \\[1.5ex]
-    Massa protone & m_p = 1.67 \cdot 10^{-27} kg \\[1.5ex]
-    Permeabilità magnetica vuoto & \mu_0 = 4 \pi \cdot 10^{-7} \ \frac{T_m}{A} \\[1.5ex]
- 
-    \bottomrule
-
-\end{tabularx}
+\frmheader{Nome Formula}{Formula}
+\frm{Carica elementare}{e = 1.60218 \cdot 10^{-19} C}
+\frm{Costante dielettrica vuoto}{\epsilon_0 = 8.854 \cdot 10^{-12} \frac{C^2}{Nm^2}}
+\frm{Avogadro}{N_a = 6.022 \cdot 10^{23}}
+\frm{Massa elettrone}{m_e = 9.11 \cdot 10^{-31} kg}
+\frm{Massa protone}{m_p = 1.67 \cdot 10^{-27} kg}
+\frm{Permeabilità magnetica vuoto}{\mu_0 = 4 \pi \cdot 10^{-7} \ \frac{T_m}{A}}
 
 \end{document}
