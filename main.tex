@@ -48,6 +48,8 @@
 }
 
 \begin{document}
+\pagestyle{empty}
+\small
 
 \twocolumn[
     \begin{center}
@@ -69,10 +71,12 @@
 \frmheader{Nome Formula}{Formula}
 \frm{Posizione x}{x(t) = x_0 + (v_0 \cos\phi_0)t}
 \frm{Posizione y}{y(t) = y_0 + (v_0 \sin\phi_0)t - \frac{1}{2}gt^2}
+\frm{Velocità x}{v_x(t) = v_0 \cos\phi_0}
+\frm{Velocità y}{v_y(t) = v_0 \sin\phi_0 - gt}
 \frm{Modulo velocità}{|\vec{v}| = \sqrt{v_x^2 + v_y^2}}
 \frm{Angolo iniziale}{\tan\phi_0 = \frac{v_y}{v_x}}
 \frm{Gittata}{R = \frac{v_0^2}{g} \sin 2\phi_0}
-
+\vfill
 \subsection{Moto circolare}
 \frmheader{Nome Formula}{Formula}
 \frm{Posizione x}{x = R \cos \theta}
@@ -84,7 +88,7 @@
 \frm{Accelerazione angolare}{\alpha = \frac{d\omega}{dt}}
 \frm{Accelerazione tangenziale}{a_t = \alpha R}
 \frm{Accelerazione totale}{a = \sqrt{a_c^2 + a_t^2} = R\sqrt{\omega^4 + \alpha^2}}
-
+\frm{Periodo}{T = \frac{2 \pi R}{t}}
 
 
 \section{Forze}
@@ -97,7 +101,7 @@
 \frm{Forza elastica}{F = -k (l - l_0) \ \text{con $k$ costante elastica}}
 \frm{Molle in parallelo}{k_{eq} = k_1 + k_2}
 \frm{Molle in serie}{\frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2}}
-\frm{Oscillatore armonico}{x(t) = A \cos(\omega t + \phi) \ \text{con $\omega = \sqrt{\frac{k}{m}}$, $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase}}
+\frm{Oscillatore armonico \scriptsize{con $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase}}{x(t) = A \cos(\omega t + \phi) \text{, con $\omega = \sqrt{\frac{k}{m}}$}}
 \frm{Periodo oscillatore armonico}{T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{m}{k}}}
 \frm{Frequenza oscillatore armonico}{\nu = \frac{1}{T} = \frac{\omega}{2\pi} = \frac{1}{2\pi} \sqrt{\frac{k}{m}}}
 \frm{Velocità max moto armonico}{v_{\text{max}} = \omega A}
@@ -141,13 +145,12 @@
 \hfill
 \begin{minipage}{0.5\columnwidth}
     \begin{tabularx}{\linewidth}{>{\centering\arraybackslash$\displaystyle}X<{$}}
-        a = c \cdot {\color{angolo_beta}\cos \beta} = c \cdot {\color{angolo_alpha}\sin \alpha} \\[1.5ex]
-        b = c \cdot {\color{angolo_alpha}\cos \alpha} = c \cdot {\color{angolo_beta}\sin \beta} \\[1.5ex]
+        a = c \cdot {\color{angolo_beta}\cos \beta} = c \cdot {\color{angolo_alpha}\sin \alpha} =  b \cdot {\color{angolo_alpha} \tan\alpha} \\[1.5ex]
+        b = c \cdot {\color{angolo_alpha}\cos \alpha} = c \cdot {\color{angolo_beta}\sin \beta} =  a \cdot {\color{angolo_beta} \tan\beta}\\[1.5ex]
         c = \frac{b}{{\color{angolo_beta}\sin \beta}} = \frac{a}{{\color{angolo_alpha}\sin \alpha}} = \frac{a}{{\color{angolo_beta}\cos \beta}} = \frac{b}{{\color{angolo_alpha}\cos \alpha}}
     \end{tabularx}
 \end{minipage}
-
-
+\vfill
 \subsection{Lavoro ed Energia}
 \frmheader{Nome Formula}{Formula}
 \frm{Lavoro}{L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = F \frac{\Delta x}{\sin(\Theta)} \cos(\frac{\pi}{2} - \Theta)}
@@ -159,9 +162,8 @@
 \frm{Energia meccanica oscillatore armonico}{E = K + U = \frac{1}{2} m v^2 + \frac{1}{2} k x^2}
 \frm{(in equilibrio)}{U(0) = 0 \text{, } K = E}
 \frm{(al massimo)}{U(A) = E \text{, } K = 0 \text{, con A ampiezza}}
-\frm{Potenza}{P = \frac{dL}{dt}}
-\frm{Potenza su punto materiale}{P = \vec{F} \dot \vec{v}}
-
+\frm{Potenza media}{P_{media} = \frac{\Delta L}{\Delta t}}
+\frm{Potenza su punto materiale}{P = \vec{F} \vec{v}}
 
 \section{Elettrostatica}
 \frmheader{Nome Formula}{Formula}
@@ -171,10 +173,12 @@
 \frm{Campo da Forza}{\vec{E} = \frac{\vec{F}}{q}}
 \frm{Accelerazione da campo}{a = \frac{q\vec{E}}{m}}
 \frm{Gauss}{\Phi(\vec{E}) = \oint_A \vec{E} \cdot d\vec{A} = \frac{Q}{\epsilon_0}}
-\frm{Potenziale per carica}{V = \frac{1}{4 \pi \epsilon_0} \frac{q}{r}}
-\frm{Energia potenziale elettrica}{U = V q}
+\frm{Potenziale per N cariche}{V = \frac{1}{4 \pi \epsilon_0} \sum_i \frac{q_i}{r_i}}
+\frm{Energia potenziale elettrica}{U = K = V q}
+\frm{Lavoro elettrico}{L = \Delta U = q \Delta V}
 \frm{Capacità}{C = \frac{Q}{V}}
 \frm{Condensatore piano}{C = \frac{[\epsilon_r] \epsilon_0 A}{d}}
+\frm{Campo elettrico piano}{\vec{E} = \frac{\sigma}{\epsilon_0} \text{, con } \sigma = \frac{Q}{A}}
 \frm{Condensatori in serie}{\frac{1}{C} = \sum_i \frac{1}{  C_i}}
 \frm{Condensatori in parallelo}{C = \sum_i C_i}
 \frm{Energia potenziale condensatore}{U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2}}
@@ -196,14 +200,13 @@
 \frm{2° Legge Kirchoff}{V - R_1 I - R_2 I - R_3 I = 0}
 \frm{Carica condensatore}{q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}})}
 
-
 \section{Magnetismo}
 \frmheader{Nome Formula}{Formula}
 \frm{Campo generato da un filo}{B \propto \frac{i}{r} \text{, con $i$ corrente nel filo, $r$ distanza dal filo}}
 \frm{Legge di Lorentz}{\vec{F} = q \vec{V} \cdot \vec{B}}
 \frm{Lorents con campo E}{\vec{F} = q \vec{E} + q (\vec{v} \cdot \vec{B})}
 \frm{Modulo Lorenz}{F = |q| v B \sin \theta \text{, con $\theta$ angolo tra velocità e campo}}
-\frm{Moto campo magnetico uniforme}{r = \frac{m v}{q B} \text{, } \omega_C = \frac{q B}{m} \text{ (detta frequenza di ciclotrone), } \nu = \frac{\omega_C}{2 \pi}}
+\frm{Moto campo magnetico uniforme}{r = \frac{m v}{q B} \text{, } \omega_C = \frac{q B}{m} \text{ \scriptsize{(detta frequenza di ciclotrone), }} \nu = \frac{\omega_C}{2 \pi}}
 \frm{Velocità in ciclotrone}{v = \frac{E}{B}}
 \frm{Thomson}{\frac{e}{m} = \frac{y E}{B^2 (LD + \frac{L^2}{2})}}
 \frm{Campo di Hall}{E_H = \frac{J B}{n q} = v_d B}
@@ -224,19 +227,16 @@
 \section{Magnetismo 2}
 \frmheader{Nome Formula}{Formula}
 \frm{Flusso}{\Phi(B) = B S \cos \theta}
-\frm{Faraday (Forza Elettromotrice Indotta)}{\mathcal{E}_{ind} = - \frac{d}{dt} (\Phi(B)) \text{, il flusso cambia nel tempo per $B$, $S$ o $\theta$}}
+\frm{Faraday (Forza Elettromotrice Indotta) \newline \scriptsize{il flusso cambia nel tempo per $B$, $S$ o $\theta$}}{\mathcal{E}_{ind} = - \frac{d}{dt} (\Phi(B))}
 \frm{Corrente da F.E.M. con Ohm}{I = \frac{| \mathcal{E}_{ind} |}{R}}
 \frm{Verso corrente}{\text{Se fuori \textbf{aumenta} viene \textbf{respinto}} \\ & \text{se fuori \textbf{diminuisce} viene \textbf{aiutato}}}
 \frm{Induzione di moto}{\mathcal{E}_{ind} = B L_\text{filo} v_\text{filo}}
 \frm{Velocità limite}{v_\text{max} = \frac{m g R}{B^2 L_\text{filo}^2}}
-\frm{F.E.M. Alternatore}{\mathcal{E}_\text{ind} = N B S \omega \sin(\omega t) \text{, con $S$ area, N spire, ruota a velocità $\omega$}}
+\frm{F.E.M. Alternatore \newline \scriptsize{con $S$ area, N spire, ruota a velocità $\omega$}}{\mathcal{E}_\text{ind} = N B S \omega \sin(\omega t)}
 \frm{}{\mathcal{E}_\text{max} = N B S \omega \text{ (ovvero l'Ampiezza) }}
 \frm{F.E.M. Trasformatore}{\frac{V_P}{V_S} = \frac{N_P}{N_S} \text{, } V_P I_P = V_S I_S}
 \frm{Corrente di Spostamento (Ampère-Maxwell)}{I_s = \epsilon_0 \frac{d}{dt} \Phi (E)}
 
-
-
-\newpage
 \section{Costanti}
 \frmheader{Nome Formula}{Formula}
 \frm{Carica elementare}{e = 1.60218 \cdot 10^{-19} C}
