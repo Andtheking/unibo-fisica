@@ -28,13 +28,7 @@
 \titlespacing*{\subsection}{0pt}{1ex plus 0.5ex minus .2ex}{0.5ex plus .2ex}
 
 \newcommand{\frmheader}[2]{
-    \par\vspace{0.5ex}\noindent
-    \begin{minipage}{\columnwidth}
-        \begin{tabularx}{\columnwidth}{@{} >{\raggedright\arraybackslash\bfseries}p{4cm} >{\centering\arraybackslash\bfseries}X @{}}
-            \rule{0pt}{2ex}#1 & #2 \\[0.5ex]
-        \end{tabularx}
-        \hrule height 1pt
-    \end{minipage}\par
+    \hrule
 }
 
 \newcommand{\frm}[2]{
@@ -64,7 +58,7 @@
 \frm{Spostamento}{x(t) = x_0 + v_0 t + \frac{1}{2} a t^2}
 \frm{Velocità}{v(t) = v_0 + a(t - t_0)}
 \frm{Velocità in Posizione}{v^2(x) = v_0^2 + 2a(x - x_1)}
-\frm{Media}{v = \frac{v_1 - v_0}{v_1 - t_0} \ \text{(analogo per accelerazione)}}
+\frm{Media}{v = \frac{v_1 - v_0}{t_1 - t_0} \ \text{(analogo per accelerazione)}}
 \frm{Velocità con accelerazione}{v(t) = v_0 + \int_{t_0}^{t_1} a(t) \ dt}
 
 \subsection{Moto del proiettile}
@@ -76,7 +70,6 @@
 \frm{Modulo velocità}{|\vec{v}| = \sqrt{v_x^2 + v_y^2}}
 \frm{Angolo iniziale}{\tan\phi_0 = \frac{v_y}{v_x}}
 \frm{Gittata}{R = \frac{v_0^2}{g} \sin 2\phi_0}
-\vfill
 \subsection{Moto circolare}
 \frmheader{Nome Formula}{Formula}
 \frm{Posizione x}{x = R \cos \theta}
@@ -95,10 +88,12 @@
 \frmheader{Nome Formula}{Formula}
 \frm{2° Legge di Newton}{\vec{F} = m\vec{a}}
 \frm{Forza peso}{\vec{P} = m\vec{g}}
+\frm{Energia potenziale peso}{U(y) = mgy}
 \frm{Forza vettoriale}{\vec{F} = F\cos\theta + F\sin\theta}
 \frm{Forza di attrito statica}{F_s \le \mu_s N}
 \frm{Forza di attrito dinamica}{F_k = \mu_k N}
 \frm{Forza elastica}{F = -k (l - l_0) \ \text{con $k$ costante elastica}}
+\frm{Energia potenziale elastica}{U(x) = \frac{1}{2} k x^2}
 \frm{Molle in parallelo}{k_{eq} = k_1 + k_2}
 \frm{Molle in serie}{\frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2}}
 \frm{Oscillatore armonico \scriptsize{con $A$ Ampiezza, $\omega$ Pulsazione, $\phi$ Fase}}{x(t) = A \cos(\omega t + \phi) \text{, con $\omega = \sqrt{\frac{k}{m}}$}}
@@ -144,33 +139,32 @@
 \end{minipage}
 \hfill
 \begin{minipage}{0.5\columnwidth}
-    \begin{tabularx}{\linewidth}{>{\centering\arraybackslash$\displaystyle}X<{$}}
+    \begin{tabularx}{\linewidth}{>{\centering\arraybackslash$\displaystyle}X<{$}} %
         a = c \cdot {\color{angolo_beta}\cos \beta} = c \cdot {\color{angolo_alpha}\sin \alpha} =  b \cdot {\color{angolo_alpha} \tan\alpha} \\[1.5ex]
         b = c \cdot {\color{angolo_alpha}\cos \alpha} = c \cdot {\color{angolo_beta}\sin \beta} =  a \cdot {\color{angolo_beta} \tan\beta}\\[1.5ex]
         c = \frac{b}{{\color{angolo_beta}\sin \beta}} = \frac{a}{{\color{angolo_alpha}\sin \alpha}} = \frac{a}{{\color{angolo_beta}\cos \beta}} = \frac{b}{{\color{angolo_alpha}\cos \alpha}}
     \end{tabularx}
 \end{minipage}
-\vfill
 \subsection{Lavoro ed Energia}
 \frmheader{Nome Formula}{Formula}
-\frm{Lavoro}{L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = F \frac{\Delta x}{\sin(\Theta)} \cos(\frac{\pi}{2} - \Theta)}
+\frm{Lavoro}{L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = F \Delta x}
 \frm{Energia cinetica}{K = \frac{1}{2} m v^2}
 \frm{Energia potenziale}{\text{d}U = -F \text{d}x}
 \frm{Energia meccanica}{E = U + K}
-\frm{Energia potenziale peso}{U(y) = mgy}
-\frm{Energia potenziale elastica}{U(x) = \frac{1}{2} k x^2}
 \frm{Energia meccanica oscillatore armonico}{E = K + U = \frac{1}{2} m v^2 + \frac{1}{2} k x^2}
 \frm{(in equilibrio)}{U(0) = 0 \text{, } K = E}
 \frm{(al massimo)}{U(A) = E \text{, } K = 0 \text{, con A ampiezza}}
 \frm{Potenza media}{P_{media} = \frac{\Delta L}{\Delta t}}
 \frm{Potenza su punto materiale}{P = \vec{F} \vec{v}}
+\frm{Conservazione Energia}{K_f - K_i = U_f - Ui}
+\frm{Energia dissipata Lavoro}{L = K_f - K_i + U_f - U_i}
 
 \section{Gravitazione}
 \frm{2° Keplero}{\frac{\Delta A}{\Delta t} = \text{cost.}}
 \frm{3° Keplero}{\frac{T^2}{a^3} = \text{cost. con a semiasse maggiore orbita}}
+\frm{3° Keplero}{\frac{T^2}{R^3} = \frac{4 \pi^2}{GM}}
 \frm{Gravitazione universale}{\vec{F}_{12} = -G \frac{m_1 m_2}{r_{12}^2} \hat{r_{12}} }
 \frm{Accelerazione gravitazionale}{\vec{g} = G \frac{M_T}{R_T^2}}
-\frm{Formula boh}{\frac{T^2}{R^3} = \frac{4 \pi^2}{GM}}
 
 \section{Elettrostatica}
 \frmheader{Nome Formula}{Formula}
@@ -186,8 +180,8 @@
 \frm{Capacità}{C = \frac{Q}{V}}
 \frm{Condensatore piano}{C = \frac{[\epsilon_r] \epsilon_0 A}{d}}
 \frm{Campo elettrico piano}{\vec{E} = \frac{\sigma}{\epsilon_0} \text{, con } \sigma = \frac{Q}{A}}
-\frm{Condensatori in serie}{\frac{1}{C} = \sum_i \frac{1}{  C_i}}
-\frm{Condensatori in parallelo}{C = \sum_i C_i}
+\frm{Condensatori in serie}{\frac{1}{C} = \sum_i \frac{1}{  C_i} \text{, $Q = Q_1 = Q_2$ e $V = V_1 + V_2$}}
+\frm{Condensatori in parallelo}{C = \sum_i C_i \text{, $V = V_1 = V_2$, $Q = Q_1 + Q_2$}}
 \frm{Energia potenziale condensatore}{U = \frac{Q^2}{2C} = \frac{1}{2} C V^2 = \frac{QV}{2}}
 \frm{Densità di energia}{u = \frac{U}{A d} = \frac{1}{2} \epsilon_0 E^2}
 \frm{Intensità di corrente \newline \scriptsize{$n$ densità portatori, $S$ sezione filo, $v_d$ velocità deriva}}{I = \frac{dQ}{dt} = n S v_d |q|}
@@ -199,13 +193,14 @@
 \frm{Drude accelerazione con campo}{\vec{a} = - \frac{e \vec{E}}{m} = \frac{\vec{F}}{m}}
 \frm{Drude velocità deriva}{\vec{v_d} = -\frac{e E}{m} \tau \text{ con $\tau$ tempo medio tra urti}}
 \frm{Drude resistività}{\rho = \frac{m}{n e^2 \tau}}
-\frm{Resistenze in serie}{R_{tot} = R_1 + R_2}
-\frm{Resistenze in parallelo}{\frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2}}
+\frm{Resistenze in serie}{R_{tot} = R_1 + R_2 \text{, $I = I_1 = I_2$, $V = V_1 + V_2$}}
+\frm{Resistenze in parallelo}{\frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} \text{, $I = I_1 + I_2$, $V = V_1 = V_2$}}
 \frm{Legge di Joule}{P = V I = R I^2 = \frac{V^2}{R}}
 \frm{Energia dissipata in resistenza}{\Delta U = -V \Delta Q}
 \frm{1° Legge Kirchoff}{I_{in_1} + I_{in_2} = I_{out_1} + I_{out_2}}
 \frm{2° Legge Kirchoff}{V - R_1 I - R_2 I - R_3 I = 0}
-\frm{Carica condensatore}{q(t) = C \Delta V ( 1 - e ^ {- \frac{t}{RC}})}
+\frm{Carica condensatore}{q(t) = C V_B ( 1 - e ^ {- \frac{t}{RC}}), v(t) = V_B (1 - e ^ {\frac{-t}{RC}}), i(t) = \frac{V_B}{R} e^{-\frac{t}{RC}}}
+\frm{Scarica condensatore}{q(t) = Q_0 e ^ {-\frac{t}{RC}}, v(t) = V_0 e ^ {-\frac{t}{RC}}, i(t) = -\frac{V_0}{R} e^{-\frac{t}{RC}}}
 
 \section{Magnetismo}
 \frmheader{Nome Formula}{Formula}
@@ -223,6 +218,7 @@
 \frm{Momento meccanico torcente}{\tau = I S \times B}
 \frm{Teorema di Ampére}{\oint B \ dr = \mu_0 \sum I_{conc}}
 \frm{Filo dritto infinito}{B = \frac{\mu_0 I}{2 \pi r}}
+\frm{Filo dritto infinito carico}{E = \frac{\lambda}{2 \pi r \epsilon_0}}
 \frm{Interno del filo}{B = \frac{\mu_0 I r}{2 \pi a^2}}
 \frm{Solenoide}{B = \mu_0 n I \text{ all'interno, all'esterno è nullo}}
 \frm{Toroide (ciambella)}{B = \frac{\mu_0 I N}{2 \pi r} \text{, con $N$ numero spire}}
