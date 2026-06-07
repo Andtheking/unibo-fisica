@@ -42,7 +42,6 @@
 }
 
 \begin{document}
-\pagestyle{empty}
 \small
 
 \twocolumn[
@@ -58,7 +57,7 @@
 \frm{Spostamento}{x(t) = x_0 + v_0 t + \frac{1}{2} a t^2}
 \frm{Velocità}{v(t) = v_0 + a(t - t_0)}
 \frm{Velocità in Posizione}{v^2(x) = v_0^2 + 2a(x - x_1)}
-\frm{Media}{v = \frac{v_1 - v_0}{t_1 - t_0} \ \text{(analogo per accelerazione)}}
+\frm{Media}{v_m = \frac{x_1 - x_0}{t_1 - t_0} \ \text{, } a_m = \frac{v_1 - v_0}{t_1 - t_0}}
 \frm{Velocità con accelerazione}{v(t) = v_0 + \int_{t_0}^{t_1} a(t) \ dt}
 
 \subsection{Moto del proiettile}
@@ -89,7 +88,8 @@
 \frm{2° Legge di Newton}{\vec{F} = m\vec{a}}
 \frm{Forza peso}{\vec{P} = m\vec{g}}
 \frm{Energia potenziale peso}{U(y) = mgy}
-\frm{Forza vettoriale}{\vec{F} = F\cos\theta + F\sin\theta}
+\frm{Versori utili}{\hat{i} = \text{asse } x, \hat{j} = \text{asse } y, \hat{k} = \text{asse } z}
+\frm{Forza vettoriale}{\vec{F} = F\cos\theta \ \hat{i} + F\sin\theta \ \hat{j}}
 \frm{Forza di attrito statica}{F_s \le \mu_s N}
 \frm{Forza di attrito dinamica}{F_k = \mu_k N}
 \frm{Forza elastica}{F = -k (l - l_0) \ \text{con $k$ costante elastica}}
@@ -103,7 +103,7 @@
 \frm{Accelerazione max moto armonico}{a_\text{max} = \omega^2 A}
 \frm{Pendolo semplice}{\sum F_x = -m g \sin \theta = m a \implies a = -g \sin \theta}
 \frm{Piccole oscillazioni pendolo}{2 \pi \sqrt{\frac{l}{g}}}
-\frm{Forza di Tensione}{T = -\vec{P} + \vec{F}_\text{risalita} = mg + m \frac{v^2}{l}}
+\frm{$\vec{T}$ pendolo punto più basso}{\vec{T} = -\vec{P} + \vec{F}_\text{risalita} = mg + m \frac{v^2}{l}}
 
 \subsection{Trigonometria}
 \begin{minipage}{0.45\columnwidth}
@@ -147,7 +147,7 @@
 \end{minipage}
 \subsection{Lavoro ed Energia}
 \frmheader{Nome Formula}{Formula}
-\frm{Lavoro}{L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \ d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = F \Delta x}
+\frm{Lavoro}{L = \int_{\vec{r}_i}^{\vec{r}_f} \vec{F} \cdot d\vec{r} = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 = F \Delta x}
 \frm{Energia cinetica}{K = \frac{1}{2} m v^2}
 \frm{Energia potenziale}{\text{d}U = -F \text{d}x}
 \frm{Energia meccanica}{E = U + K}
@@ -155,8 +155,8 @@
 \frm{(in equilibrio)}{U(0) = 0 \text{, } K = E}
 \frm{(al massimo)}{U(A) = E \text{, } K = 0 \text{, con A ampiezza}}
 \frm{Potenza media}{P_{media} = \frac{\Delta L}{\Delta t}}
-\frm{Potenza su punto materiale}{P = \vec{F} \vec{v}}
-\frm{Conservazione Energia}{K_f - K_i = U_f - Ui}
+\frm{Potenza su punto materiale}{P = \vec{F} \cdot \vec{v}}
+\frm{Conservazione Energia}{K_i + U_i = K_f + U_f}
 \frm{Energia dissipata Lavoro}{L = K_f - K_i + U_f - U_i}
 
 \section{Gravitazione}
@@ -205,17 +205,17 @@
 \section{Magnetismo}
 \frmheader{Nome Formula}{Formula}
 \frm{Campo generato da un filo}{B \propto \frac{i}{r} \text{, con $i$ corrente nel filo, $r$ distanza dal filo}}
-\frm{Legge di Lorentz}{\vec{F} = q \vec{V} \cdot \vec{B}}
+\frm{Legge di Lorentz}{\vec{F} = q \vec{V} \times \vec{B}}
 \frm{Mano destra}{\text{Indice $\vec{v}$, Medio $\vec{B}$, Pollice $\vec{F}$}}
-\frm{Lorents con campo E}{\vec{F} = q \vec{E} + q (\vec{v} \cdot \vec{B})}
-\frm{Modulo Lorenz}{F = |q| v B \sin \theta \text{, con $\theta$ angolo tra velocità e campo}}
+\frm{Lorentz con campo E}{\vec{F} = q \vec{E} + q (\vec{v} \times \vec{B})}
+\frm{Modulo Lorentz}{F = |q| v B \sin \theta \text{, con $\theta$ angolo tra velocità e campo}}
 \frm{Moto campo magnetico uniforme}{r = \frac{m v}{q B} \text{, } \omega_C = \frac{q B}{m} \text{ \scriptsize{(detta frequenza di ciclotrone), }} \nu = \frac{\omega_C}{2 \pi}}
 \frm{Velocità in ciclotrone}{v = \frac{E}{B}}
 \frm{Thomson}{\frac{e}{m} = \frac{y E}{B^2 (LD + \frac{L^2}{2})}}
 \frm{Campo di Hall}{E_H = \frac{J B}{n q} = v_d B}
 \frm{Coefficiente di Hall}{R_H = \frac{E_H}{JB} = \frac{1}{n q}}
-\frm{Filo rettilineo}{F = I \vec{l} \times B \text{, con $\vec{l}$ distanza}}
-\frm{Momento meccanico torcente}{\tau = I S \times B}
+\frm{Filo rettilineo}{\vec{F} = I \vec{l} \times \vec{B} \text{, con $\vec{l}$ distanza}}
+\frm{Momento meccanico torcente}{\vec{\tau} = I \vec{S} \times \vec{B}}
 \frm{Teorema di Ampére}{\oint B \ dr = \mu_0 \sum I_{conc}}
 \frm{Filo dritto infinito}{B = \frac{\mu_0 I}{2 \pi r}}
 \frm{Filo dritto infinito carico}{E = \frac{\lambda}{2 \pi r \epsilon_0}}
@@ -248,6 +248,6 @@
 \frm{Avogadro}{N_a = 6.022 \cdot 10^{23}}
 \frm{Massa elettrone}{m_e = 9.11 \cdot 10^{-31} kg}
 \frm{Massa protone}{m_p = 1.67 \cdot 10^{-27} kg}
-\frm{Permeabilità magnetica vuoto}{\mu_0 = 4 \pi \cdot 10^{-7} \ \frac{T_m}{A}}
+\frm{Permeabilità magnetica vuoto}{\mu_0 = 4 \pi \cdot 10^{-7} \ \frac{\text{T} \text{m}}{\text{A}}}
 
 \end{document}
